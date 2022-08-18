@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+    h1= title
+
+    p Title: #{movie.title}
+    p Description: #{movie.description}
+    p Genre:
+        each val in movie.genre
+            a(href=val.url) #{val.name}
+    p Price: #{movie.price}
+    p Number In Stock: #{movie.number_in_stock}
+
+    p 
+        a(href=movie.url+'/update') Update
+    p 
+        a(href=movie.url+'/Delete') Delete

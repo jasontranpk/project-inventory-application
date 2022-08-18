@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+    h1= title 
+
+    form(method='POST' action='')
+        div.form-group
+            label(for='name') Genre: 
+            input#name.form-control(type='text', placeholder='Drama, Scifi...' name='name' value=(genre ===undefined?'': genre.name), required = true)
+        div.form-group
+            label(for='name') Description: 
+            input#description.form-control(type='text', placeholder='Movies\' description' name='description' value=(genre ===undefined?'': genre.description), required = true)
+        button.btn.btn-primary(type='submit') Submit
+    if errors
+        ul
+            for error in errors
+                li!= error.msg

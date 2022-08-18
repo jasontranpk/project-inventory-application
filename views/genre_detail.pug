@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    h1= title
+
+    p Name: #{genre.name}
+
+    p Description: #{genre.description}
+
+    p 
+        a(href=genre.url+'/update') Update
+    p 
+        a(href=genre.url+'/Delete') Delete
